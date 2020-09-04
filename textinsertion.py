@@ -5,37 +5,43 @@ Created on Thu Sep  3 07:09:39 2020
 @author: n3ko
 """
 
-#problemas e el codigo borran al a;adir nuevo codigo.
-#lee por cantidad de caracteres en lugar de lineas
-
 from io import open
 
-archivo=open("E:/Proyecto_codep/prueba.txt", "r+")
+class Name():
+    
+    def __init__(self):
+        self.initialcaract= 0
+        self.myline=""
+        self.urlfile=""
+        self.f=""
+        
+    def textinsert(self, initialcaract, myline, urlfile):
+#initialcaracter is the caracter for start
+#myline is a custom line of text. remember the initial space and finish space
+#  urlfile is the direction in windows example E:/ejem/ejem.txt
+    
+    
+        archivo=open(urlfile, "r+")
 
 
-archivo.seek(0)
+        archivo.seek(0) 
+        
+        self.f=archivo.read(initialcaract)
+        ftwo=initialcaract+1
+      
+        xtra=archivo.readlines(ftwo)
+        stra= "".join(xtra)
+#the mod archive finished in mod
+        file=urlfile + "mod"
 
-d=int(input("introduce a partir de que caracter quieres cortar: "))
+#creation of new file and writing
+        newfile=open(file, "w")
 
-f=(archivo.read(d))
-file=open("E:/Proyecto_codep/prueba2.txt", "w")
-
-file.write(f)
-
-a=input("que deseas a;adir en medio: ")
-
-file.write(a)
-
-file.close() 
-
-file=open("E:/Proyecto_codep/prueba2.txt", "a")
-
-archivo.seek(d+1)
-
-f=archivo.readline()
-
-file.write(f)  
-
-file.close()  
-   
-archivo.close()        
+        newfile.write(self.f)
+        newfile.write(myline)
+        newfile.write(stra)
+    
+        archivo.close()
+        newfile.close()
+    
+    
