@@ -10,10 +10,10 @@ from io import open
 
 
 def textinsert(initialcaract, myline, urlfile):
-    """initialcaracter is the caracter for start.
-myline is your custom line of text you need add in the midle of text file.
+    """initialcaracter is the caracter for start the change text remember is a int ().
+myline is your custom line of text you need add in the midle of text file remember is a str ("").
 remember the initial space and finish space.
-urlfile is the direction in windows example E:/ejem/ejem.txt
+urlfile is the direction in windows example E:/ejem/ejem.txt remember is a str ("").
 this funtion create a second file whit mod after normal name"""
 
 
